@@ -1,0 +1,159 @@
+/* Import Google font - Poppins  */
+@import url("http://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+.wrapper {
+  width: 60vw;
+  padding: 2.5vw;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0px 10px 1px rgba(255, 255, 255, 0.8);
+}
+.wrapper .input-field {
+  z-index: -999;
+  opacity: 0;
+  position: absolute;
+}
+.wrapper .content-box {
+  padding: 1.2vw 2vw 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.content-box .typing-text {
+  max-height: 22vw;
+  overflow-y: auto;
+}
+.typing-text::-webkit-scrollbar {
+  width: 0;
+}
+.typing-text p {
+  font-size: 1.8vw;
+  text-align: justify;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+.typing-text p span{
+  position: relative;
+  font-size: 1.9vw;
+  color: #fff;
+}
+.typing-text p span.correct {
+  color: #0a97fe;
+}
+.typing-text p span.incorrect {
+  color: #fff;
+  background: #fe0a0a;
+  border-radius: 4px;
+}
+.typing-text p span.active {
+  color: #0a97fe;
+}
+.typing-text p span.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  opacity: 0;
+  background-color: #0a97fe;
+  animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+  50%{
+    opacity: 1;
+  }
+}
+.content-box .content {
+  display: flex;
+  margin-top: 1.5vw;
+  padding: 1vw 0;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  justify-content: space-between;
+}
+.content button {
+  border: none;
+  outline: none;
+  width: 8.5vw;
+  padding: 0.5vw 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.4vw;
+  border-radius: 5px;
+  background-color: #0a97fe;
+  transition: transform 0.3s ease;
+}
+.content button:active {
+  transform: scale(0.9);
+}
+.content .result-details {
+  display: flex;
+  width: calc(100% - 140px);
+  justify-content: space-between;
+}
+.result-details li {
+  height: 1.8vw;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  color: #fff;
+}
+.result-details li:not(:first-child) {
+  padding-left: 3vw;
+  border-left: 1px solid #ccc;
+}
+.result-details li a {
+  font-size: 2vw;
+}
+.result-details li span {
+  display: block;
+  font-size: 1.8vw;
+  margin-left: 1vw;
+}
+.result-details li:not(:first-child) span {
+  font-weight: 500;
+}
+.result-details li b {
+  font-weight: 500;
+}
+
+
+@media all and (max-width:700px) {
+    .wrapper {
+        width: 80vw;
+        height: 70vh;
+    }
+    .wrapper .content-box {
+        height: 65vh;
+    }
+    .content-box .typing-text {
+        max-height: 60vw;
+        overflow-y: auto;
+    }
+    .typing-text p {
+        font-size: 3vw;
+    }
+    .typing-text p span{
+        position: relative;
+        font-size: 3vw;
+        color: #fff;
+    }
+    .content button {
+        width: 18vw;
+        font-size: 2.5vw;
+        padding: 1vw 0;
+    }
+}

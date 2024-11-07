@@ -1,0 +1,12 @@
+:root {
+    /* 기본색 */
+    --black: #000; 
+
+    /* 배경색 */
+    --white: #fff;
+
+    /* 폰트 */
+    --font_basic : "GmarketSans";
+
+
+}

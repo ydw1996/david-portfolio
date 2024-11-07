@@ -1,0 +1,245 @@
+.blog__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blog__title {
+    width: 100%;
+    text-align: center;
+    padding: 100px 0;
+    background: url(../img/card_bg01.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+    margin: 50px 0;
+}
+
+.blog__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+.blog__title .cate {
+    background: #fff;
+    border-radius: 30px;
+    padding: 0 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.blog__title .title {
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.blog__title .info {
+    color: #fff;
+    font-size: 16px;
+}
+
+.blog__title .info .modify {
+    font-weight: 300;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.blog__contents {
+    width: 70%;
+    border-right: 1px solid #000;
+    padding-right: 30px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.blog__aside {
+    width: 25%;
+}
+
+.aside__intro {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.aside__intro .img {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin: 0 50px 10px;
+    margin-top: 0;
+}
+
+.aside__intro .desc {
+    font-weight: 300;
+    word-break: keep-all;
+    text-align: center;
+    padding: 10px;
+}
+
+.aside__cate {
+    border-top: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.aside__cate h3 {
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 2px 1px 2px;
+}
+
+/* blog__article */
+.blog__article {
+    margin-top: 50px;
+    border-top: 2px solid #000;
+}
+.blog__article > h3 {
+    background: #000;
+    color: #fff;
+    margin-bottom: 40px;
+    display: inline-block;
+    margin-top: -1px;
+    padding: 2px 20px;
+}
+.blog__article .card__inner>div p {
+    display: none;
+}
+
+
+/* cardStyle */
+.card__wrap h2 {
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 1rem;
+}
+
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.card__inner>div {
+    width: 32%;
+    margin-bottom: 4%;
+}
+
+.card__inner>div figure {
+    position: relative;
+    overflow: hidden;
+}
+
+.card__inner>div figure img {
+    filter: saturate(0%);
+    transition: all 0.3s;
+}
+
+.card__inner>div figure img:hover {
+    filter: saturate(100%);
+}
+
+.card__inner>div figure .go {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    text-align: center;
+    line-height: 31px;
+    transform: translateX(100px) rotate(760deg);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.card__inner>div figure:hover .go {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+.card__inner>div h3 {
+    font-size: 1.3rem;
+    line-height: 2;
+    margin-top: 0.3em;
+}
+
+.card__inner>div p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* cardstyle2 */
+.card__inner.style2 > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.card__inner.style2>div figure {
+    width: 30%;
+}
+.card__inner.style2>div > div {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+}
+.card__inner.style2>div > div h3 {
+   margin-top: 0;
+   line-height: 1;
+   margin-bottom: 10px;
+}
+
+.card__pages {
+    text-align: center;
+}
+
+.card__pages li {
+    display: inline;
+}
+
+.card__pages li a {
+    border: 1px solid #000;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.card__pages li.active a {
+    background: #000;
+    color: #fff;
+}
+
+.card__more {
+    width: 100%;
+    text-align: center;
+}
+
+.card__more a {
+    border: 1px solid #000;
+    padding: 10px 40px;
+}
+
+.card__more a:hover {
+    background: #000;
+    color: #fff;
+}

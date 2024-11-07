@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --pink: #ff74a4;
+  --violet: #9f6ea3;
+  --lightblack: #515c6f;
+  --white: #ffffff;
+  --darkwhite: #cecaca;
+  --pinkshadow: #ffcbdd;
+  --lightbshadow: rgba(0, 0, 0, 0.15);
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+.wrapper {
+  width: 29vw;
+  height: 50vw;
+  padding: 2.5vw 3vw;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 0px 10px 1px rgba(255, 255, 255, 0.8);
+  background: #000;
+}
+.wrapper i {
+  cursor: pointer;
+}
+.top-bar,
+.progress-area .song-timer,
+.controls,
+.music-list .header,
+.music-list ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar i {
+  font-size: 3vw;
+  color: var(--white);
+}
+.top-bar i:first-child {
+  margin-left: -0.7vw;
+}
+.top-bar span {
+  font-size: 1.8vw;
+  margin-left: -3px;
+}
+.img-area {
+  width: 100%;
+  height: 22vw;
+  overflow: hidden;
+  margin-top: 2vw;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  box-shadow: 0 0px 10px 1px rgba(255, 255, 255, 0.8);
+}
+.img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.song-details {
+  text-align: center;
+  margin: 2vw 0;
+}
+.song-details p {
+  color: #e1e1e1;
+}
+.song-details .name {
+  font-size: 1.7vw;
+  color: #fff;
+}
+.song-details .artist {
+  font-size: 1.2vw;
+  opacity: 0.9;
+  line-height: 3vw;
+}
+.progress-area {
+  height: 6px;
+  width: 100%;
+  border-radius: 5vw;
+  background: #fff;
+  cursor: pointer;
+}
+.progress-area .progress-bar {
+  height: inherit;
+  width: 0%;
+  position: relative;
+  border-radius: inherit;
+  background: #0a97fe;
+}
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 1vw;
+  width: 1vw;
+  border-radius: 50%;
+  top: 50%;
+  right: -5px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background: inherit;
+  transition: opacity 0.2s ease;
+}
+.progress-area:hover .progress-bar::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+.progress-area .song-timer {
+  margin-top: 5px;
+}
+.song-timer span {
+  font-size: 13px;
+  color: var(--white);
+}
+.controls {
+  margin: 3.5vw 0.5vw 0;
+}
+.controls i {
+  font-size: 2.3vw;
+  user-select: none;
+  background: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.controls i:nth-child(2),
+.controls i:nth-child(4) {
+  font-size: 3.5vw;
+}
+.controls #prev {
+  margin-right: -1vw;
+}
+.controls #next {
+  margin-left: -1vw;
+}
+.controls .play-pause {
+  height: 4.5vw;
+  width: 4.5vw;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
+  box-shadow: 0 0px 10px 1px rgba(255, 255, 255, 0.8);
+}
+.play-pause::before {
+  position: absolute;
+  content: "";
+  height: 3.8vw;
+  width: 3.8vw;
+  border-radius: inherit;
+  background: #000;
+}
+.play-pause i {
+  height: 3.8vw;
+  width: 3.8vw;
+  line-height: 3.8vw;
+  text-align: center;
+  background: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+}
+.music-list {
+  position: absolute;
+  background: #000;
+  width: 100%;
+  left: 0;
+  bottom: -55%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  padding: 1vw 2.5vw;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  box-shadow: 0 0px 10px 1px rgba(255, 255, 255, 0.8);
+  transition: all 0.15s ease-out;
+}
+.music-list.show {
+  bottom: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+.header .row {
+  display: flex;
+  align-items: center;
+  font-size: 1.3vw;
+  color: var(--white);
+}
+.header .row i {
+  cursor: default;
+}
+.header .row span {
+  margin-left: 5px;
+}
+.header #close {
+  font-size: 22px;
+  color: var(--white);
+}
+.music-list ul {
+  margin: 10px 0;
+  max-height: 260px;
+  overflow: auto;
+}
+.music-list ul::-webkit-scrollbar {
+  width: 0px;
+}
+.music-list ul li {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: var(--white);
+  border-bottom: 1px solid #0a97fe;
+}
+.music-list ul li:last-child {
+  border-bottom: 0px;
+}
+.music-list ul li .row span {
+  font-size: 1.2vw;
+}
+.music-list ul li .row p {
+  opacity: 0.9;
+}
+ul li .audio-duration {
+  font-size: 1.1vw;
+}
+ul li.playing {
+  pointer-events: none;
+  color: #fff;
+}
+
+/* 1200px */
+@media all and (max-width:1200px) {
+    .wrapper {
+        width: 25vw;
+        height: 40vw;
+    }
+    .img-area {
+        height: 15vw;
+    }
+    .song-details {
+    margin: 1vw 0;
+    }
+    .controls .play-pause {
+    height: 3.5vw;
+    width: 3.5vw;
+    }
+    .play-pause::before {
+    height: 3vw;
+    width: 3vw;
+    }
+    .play-pause i {
+    height: 3vw;
+    width: 3vw;
+    line-height: 3vw;
+    }
+    .controls i:nth-child(2),
+    .controls i:nth-child(4) {
+    font-size: 3vw;
+}
+}
+/* 700px */
+@media all and (max-width:700px) {
+    .wrapper {
+        width: 40vw;
+        height: 75vw;
+    }
+    .img-area {
+    height: 30vw;
+    }
+    .song-details {
+    margin: 5vw 0;
+    }
+    .song-details .name {
+    font-size: 2.5vw;
+    }
+    .song-details .artist {
+    font-size: 2vw;
+    opacity: 0.9;
+    line-height: 3vw;
+    }
+    .controls .play-pause {
+    height: 5.5vw;
+    width: 5.5vw;
+    }
+    .play-pause::before {
+    height: 4.5vw;
+    width: 4.5vw;
+    }
+    .play-pause i {
+    height: 4.5vw;
+    width: 4.5vw;
+    line-height: 4.5vw;
+    }
+    .controls {
+        margin: 8.5vw 0.5vw 0;
+    }
+    .controls i {
+        font-size: 4.5vw;
+    }
+    .controls i:nth-child(2),
+    .controls i:nth-child(4) {
+    font-size: 4.5vw;
+}
+}
